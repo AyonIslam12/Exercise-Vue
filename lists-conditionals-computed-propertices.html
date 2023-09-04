@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists Conditionals And Computed Properties</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       html, body{
+         height: 100%
+       }
+       body{
+        display: grid;
+        place-items: center;
+       }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button :class="color_status ? 'text-dark btn btn-outline-success': 'text-dark btn btn-outline-danger' " @click="toggle">Click Here</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                // buttonClass: "text-dark btn btn-outline-danger"
+                color_status: false
+            };
+        },
+        methods: {
+          toggle(){
+            this.color_status = ! this.color_status
+
+          }
+          
+        }
+
+    }).mount('#app')
+</script>
+</html>
