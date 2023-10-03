@@ -11,15 +11,16 @@ export default {
      </div>
      <div v-else >
          <h1>{{ title }}</h1>
-         <div class="alert alert-success text-center fw-bolder text-dark" role="alert">
-             {{ exitData }}
-         </div>
+         <div :class="'alert alert-' + bgColor + ' text-center fw-bolder text-dark'" role="alert">
+                {{ exitData }}
+            </div>
      </div>
      </section>
     `,
     props:{
         assignments: Array,
         title: String,
-        exitData: String
+        exitData: String,
+        bgColor: String
     }
 }
