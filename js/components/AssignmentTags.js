@@ -4,7 +4,7 @@ export default {
             <span 
                 v-for="tag in tags" 
 
-                @click="$emit('change',tag)"
+                @click="$emit('update:currentTag',tag)"
 
                 class="p-1 border m-1" 
 
