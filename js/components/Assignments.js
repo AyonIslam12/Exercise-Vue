@@ -34,7 +34,6 @@ export default {
      methods: {
         createNewAssignment(name,tag){
             tag = tag.charAt(0).toLowerCase() + tag.slice(1);
-            alert( tag)
            this.assignments.push({
                 name: name,
                 tag: tag,
