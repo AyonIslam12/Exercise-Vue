@@ -1,0 +1,10 @@
+{
+    "assignments": [
+        {"name": "Math Assignment", "complete": false, "id": 1, "tag":"math"},
+        {"name": "CSC Assignment", "complete": false, "id": 2, "tag":"csc"},
+        {"name": "ICT Assignment", "complete": false, "id": 3, "tag":"ict"},
+        {"name": "English Assignment", "complete": false, "id": 4, "tag":"english"},
+        {"name": "Vue Assignment", "complete": false, "id": 4, "tag":"programming"},
+        {"name": "Html Assignment", "complete": true, "id": 4, "tag":"programming"}
+    ]
+}

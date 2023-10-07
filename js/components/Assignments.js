@@ -12,12 +12,7 @@ export default {
     `,
     data(){
          return{
-             assignments: [
-                 {name: 'Math Assignment', complete: false, id: 1, tag:'math'},
-                 {name: 'CSC Assignment', complete: false, id: 2, tag:'csc'},
-                 {name: 'ICT Assignment', complete: false, id: 3, tag:'ict'},
-                 {name: 'English Assignment', complete: false, id: 4, tag:'english'},
-             ],
+             assignments: [],
 
            
          };
@@ -30,6 +25,13 @@ export default {
             completed:this.assignments.filter(a=>a.complete),
            };
          }
+     },
+     created() {
+        fetch('http://localhost:3000/assignments')
+        .then(response => response.json())
+        .then(assignments =>{
+            this.assignments = assignments;
+        });
      },
      methods: {
         createNewAssignment(name,tag){
