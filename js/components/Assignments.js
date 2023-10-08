@@ -4,8 +4,6 @@ import createAssignment from "./createAssignment.js";
 export default {
     components:{AssignmentList,createAssignment},
     template: `
-
-    
     <div class="d-flex justify-content-between">
     <assignment-list :assignments="filters.progress" title="In Progress" bgColor="success">
         <create-assignment @addNew="createNewAssignment"></create-assignment>
