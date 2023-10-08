@@ -5,16 +5,26 @@ export default {
     components:{AssignmentList,createAssignment},
     template: `
 
-    <create-assignment @addNew="createNewAssignment"></create-assignment>
-    <assignment-list :assignments="filters.progress" title="In Progress" exitData="All Completed" bgColor="success"></assignment-list>
-    <assignment-list :assignments="filters.completed" title="Completed" exitData="No Item Completed Yet" bgColor="warning"></assignment-list>
+    
+    <div class="d-flex justify-content-between">
+    <assignment-list :assignments="filters.progress" title="In Progress" bgColor="success">
+        <create-assignment @addNew="createNewAssignment"></create-assignment>
+    </assignment-list>
+    <assignment-list 
+            v-if="showCompleted"
+            can-toggle 
+            :assignments="filters.completed" 
+            title="Completed" 
+            bgColor="warning"
+            @toggle="showCompleted = !showCompleted"
+     ></assignment-list>
+    </div>
     
     `,
     data(){
          return{
              assignments: [],
-
-           
+             showCompleted: true
          };
          
      },
